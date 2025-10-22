@@ -2,3 +2,32 @@
 
 # Fibonacci Sequence Exercise with functions
 # TODO: (Read detailed instructions in the Readme file)
+def get_number():
+  """Prompt the user for a positive integer and validate input."""
+  while True:
+  try:
+    num = int(input("Enter how many terms of the Fibonacci sequence you want: "))
+    if num <= 0:
+      print("Please enter a positive integer.")
+    else:
+      return num
+  except ValueError:
+    print("Invalid input. Please enter an integer.")
+
+
+def generate_fibonacci(n):
+  """Generate Fibonacci sequence up to n terms and return as a list."""
+  sequence = []
+  a, b = 0, 1
+  for _ in range(n):
+    sequence.append(a)
+    a, b = b, a + b
+  return sequence
+
+def print_sequence(sequence):
+  """Print the Fibonacci sequence in a readable format."""
+  print("Fibonacci Sequence:")
+  for num in sequence:
+    print(num, end=" ")
+    print()  # for new line
+
