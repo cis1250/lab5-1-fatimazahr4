@@ -4,15 +4,11 @@
 # TODO: (Read detailed instructions in the Readme file)
 def get_number():
   #positive integer and validate input
-  while True:
-    try:
-      num = int(input("Enter how many terms of the Fibonacci sequence you want: "))
-      if num <= 0:
+    num = int(input("Enter how many terms of the Fibonacci sequence you want: "))
+    while num <= 0:
         print("Please enter a positive integer.")
-      else:
-        return num
-    except ValueError:
-      print("Invalid input. Please enter an integer.")
+        num = int(input("Enter how many terms of the Fibonacci sequence you want: "))
+    return num
 
 
 def generate_fibonacci(n):
@@ -29,7 +25,7 @@ def print_sequence(sequence):
   print("Fibonacci Sequence:")
   for num in sequence:
     print(num, end=" ")
-    print() #newline
+  print() #newline
 
 n = get_number()
 sequence = generate_fibonacci(n)
